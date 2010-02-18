@@ -11,7 +11,7 @@ require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/tapio/.config/awesome/oipat/theme.lua")
+beautiful.init( awful.util.getdir("config") .. "/oipat/theme.lua" )
 
 -- This is used later as the default terminal and editor to run.
 screenlock = "xlock"
@@ -103,8 +103,8 @@ separator.text  = "::"
 -- Create a netwidget (usage)
 dnicon = widget({ type = "imagebox" })
 upicon = widget({ type = "imagebox" })
-dnicon.image = image("/home/tapio/.config/awesome/fresh/down.png")
-upicon.image = image("/home/tapio/.config/awesome/fresh/up.png")
+dnicon.image = image( awful.util.getdir("config") .. "/icons/down.png")
+upicon.image = image( awful.util.getdir("config") .. " /icons/up.png")
 -- Initialize widget
 netwidget = widget({ type = "textbox" })
 -- Register widget
@@ -112,14 +112,14 @@ vicious.register(netwidget, vicious.widgets.net, "${eth0 down_kb}kb/s / ${eth0 u
 
 -- Create pacman widget
 pacicon = widget({ type = "imagebox" })
-pacicon.image = image("/home/tapio/.config/awesome/fresh/pacman.png")
+pacicon.image = image( awful.util.getdir("config") .. " /icons/pacman.png")
 pacwidget = widget({ type = "textbox" })
 vicious.register(pacwidget, vicious.widgets.pkg, "$1", 360, "Arch")
 
 -- MPD widget
 
 mpdicon = widget({ type = "imagebox"})
-mpdicon.image = image("/home/tapio/.config/awesome/fresh/music.png")
+mpdicon.image = image( awful.util.getdir("config") .. " /icons/music.png")
 mpdwidget = widget({ type = "textbox" })
 vicious.register(mpdwidget, vicious.widgets.mpd, "$1", 5)
 
@@ -127,7 +127,7 @@ vicious.register(mpdwidget, vicious.widgets.mpd, "$1", 5)
 
 -- Create an fswidget (Eat your heart out Saethr!)
 fsicon = widget({ type = "imagebox" })
-fsicon.image = image("/home/tapio/.config/awesome/fresh/disk.png")
+fsicon.image = image( awful.util.getdir("config") .. " /icons/disk.png")
 
 -- Initialize widgets
 fswidget_root = widget({ type = "textbox" })
@@ -142,7 +142,7 @@ vicious.register(fswidget_warez, vicious.widgets.fs, "w ${/media/warez used_p}%"
 
 -- Create a gmailwidget (inbox status)
 gmailicon = widget({ type = "imagebox" })
-gmailicon.image = image("/home/tapio/.config/awesome/fresh/mail.png")
+gmailicon.image = image( awful.util.getdir("config") .. " /icons/mail.png")
 
 -- Initialize widgets
 gmailwidgetcnt = widget({ type = "textbox" })
@@ -154,7 +154,7 @@ vicious.register(gmailwidgetsub, vicious.widgets.gmail, "${subject}", 260)
 
 -- Create a memwidget (usage$ usedMB/TotalMB)
 memicon = widget({ type = "imagebox" })
-memicon.image = image("/home/tapio/.config/awesome/fresh/mem.png")
+memicon.image = image( awful.util.getdir("config") .. " /icons/mem.png")
 -- Initialize widget
 memwidget = widget({ type = "textbox" })
 -- Register widget
@@ -162,8 +162,8 @@ vicious.register(memwidget, vicious.widgets.mem, "$2MB/$3MB", 13)
 
 -- Create a cpuwidget (usage%)
 cpuicon = widget({ type = "imagebox" })
-cpuicon.image = image("/home/tapio/.config/awesome/fresh/cpu.png")
---cpuicon.image = image("/home/tapio/.config/awesome/icons/cpu.xbm")
+cpuicon.image = image( awful.util.getdir("config") .. " /icons/cpu.png")
+--cpuicon.image = image( awful.util.getdir("config") .. " /icons/cpu.xbm")
 -- Initialize widget
 cpuwidget = widget({ type = "textbox" })
 -- Register widget
@@ -172,7 +172,7 @@ vicious.register(cpuwidget, vicious.widgets.cpu, "$1%:$2%", 2)
 -- Register widget
 -- Create a textclock widget
 clockicon = widget({ type = "imagebox" })
-clockicon.image = image("/home/tapio/.config/awesome/fresh/time.png")
+clockicon.image = image( awful.util.getdir("config") .. " /icons/time.png")
 mytextclock = awful.widget.textclock({ align = "right" })
 
 -- Create a systray
