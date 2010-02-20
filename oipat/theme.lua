@@ -32,8 +32,8 @@ theme.border_marked = "#2a211b"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Display the taglist squares
-theme.taglist_squares_sel   =  awful.util.getdir("config") .. "/oipat/images/squarefz.png"
-theme.taglist_squares_unsel =  awful.util.getdir("config") .. "/oipat/images/squarez.png"
+theme.taglist_squares_sel   =  awful.util.getdir("config") .. "/oipat/icons/squarefz.png"
+theme.taglist_squares_unsel =  awful.util.getdir("config") .. "/oipat/icons/squarez.png"
 
 theme.tasklist_floating_icon =  awful.util.getdir("config") .. "/oipat/tasklist/floatingw.png"
 
@@ -74,7 +74,7 @@ theme.titlebar_maximized_button_normal_active =  awful.util.getdir("config") .. 
 theme.titlebar_maximized_button_focus_active  =  awful.util.getdir("config") .. "/oipat/titlebar/maximized_focus_active.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "awsetbg -t awful.util.getdir("config") .. "/oipat/background.gif" }
+theme.wallpaper_cmd = { "awsetbg -t" .. awful.util.getdir("config") .. "/oipat/background.gif" }
 
 -- You can use your own layout icons like this:
 theme.layout_fairh =  awful.util.getdir("config") .. "/oipat/layouts/fairhw.png"
@@ -90,7 +90,7 @@ theme.layout_tiletop =  awful.util.getdir("config") .. "/oipat/layouts/tiletopw.
 theme.layout_spiral  =  awful.util.getdir("config") .. "/oipat/layouts/spiralw.png"
 theme.layout_dwindle =  awful.util.getdir("config") .. "/oipat/layouts/dwindlew.png"
 
-theme.awesome_icon =  awful.util.getdir("config") .. "/oipat/images/smile.png"
+theme.awesome_icon =  awful.util.getdir("config") .. "/oipat/icons/smile.png"
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80

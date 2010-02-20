@@ -30,27 +30,19 @@ modkey = "Mod4"
 layouts =
 {
     awful.layout.suit.tile,            --1
-    awful.layout.suit.tile.left,       --2
-    awful.layout.suit.tile.bottom,     --3
-    awful.layout.suit.tile.top,        --4
-    awful.layout.suit.fair,            --5
-    awful.layout.suit.fair.horizontal, --6
-    awful.layout.suit.spiral,          --7
-    awful.layout.suit.spiral.dwindle,  --8
-    awful.layout.suit.max,             --9
-    awful.layout.suit.max.fullscreen,  --10
-    awful.layout.suit.magnifier,       --11
-    awful.layout.suit.floating         --12
+    awful.layout.suit.fair,            --2
+    awful.layout.suit.floating,        --3
+    awful.suit.tile.bottom             --4
 }
 -- }}}
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-  names = { "brows", "term", "dev", "ssh", "misc" },
+  names = { "msc", "dev", "net", "irc", "vid" },
   layout = {
     layouts[1], layouts[1], layouts[1],
-    layouts[1], layouts[1]
+    layouts[2], layouts[3]
 }}
 
 for s = 1, screen.count() do
@@ -61,7 +53,6 @@ end
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
- --  { "manual", terminal .. " -e man awesome" }, doens't wrok...
    { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
    { "restart", awesome.restart },
    { "quit", awesome.quit }
@@ -108,7 +99,7 @@ upicon.image = image( awful.util.getdir("config") .. " /icons/up.png")
 -- Initialize widget
 netwidget = widget({ type = "textbox" })
 -- Register widget
-vicious.register(netwidget, vicious.widgets.net, "${eth0 down_kb}kb/s / ${eth0 up_kb}kb/s", 1)
+vicious.register(netwidget, vicious.widgets.net, "${eth1 down_kb}kb/s / ${eth1 up_kb}kb/s", 1)
 
 -- Create pacman widget
 pacicon = widget({ type = "imagebox" })
@@ -117,13 +108,10 @@ pacwidget = widget({ type = "textbox" })
 vicious.register(pacwidget, vicious.widgets.pkg, "$1", 360, "Arch")
 
 -- MPD widget
-
 mpdicon = widget({ type = "imagebox"})
 mpdicon.image = image( awful.util.getdir("config") .. " /icons/music.png")
 mpdwidget = widget({ type = "textbox" })
 vicious.register(mpdwidget, vicious.widgets.mpd, "$1", 5)
-
-
 
 -- Create an fswidget (Eat your heart out Saethr!)
 fsicon = widget({ type = "imagebox" })
@@ -138,7 +126,6 @@ fswidget_warez = widget({ type = "textbox" })
 vicious.register(fswidget_root, vicious.widgets.fs, "r ${/ used_p}%", 60)
 vicious.register(fswidget_home, vicious.widgets.fs, "h ${/home used_p}%", 60)
 vicious.register(fswidget_warez, vicious.widgets.fs, "w ${/media/warez used_p}%", 60)
-                                                
 
 -- Create a gmailwidget (inbox status)
 gmailicon = widget({ type = "imagebox" })
