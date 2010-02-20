@@ -74,7 +74,7 @@ theme.titlebar_maximized_button_normal_active =  awful.util.getdir("config") .. 
 theme.titlebar_maximized_button_focus_active  =  awful.util.getdir("config") .. "/oipat/titlebar/maximized_focus_active.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "awsetbg -t /home/tapio/.config/awesome/oipat/background.gif" }
+theme.wallpaper_cmd = { "awsetbg -t awful.util.getdir("config") .. "/oipat/background.gif" }
 
 -- You can use your own layout icons like this:
 theme.layout_fairh =  awful.util.getdir("config") .. "/oipat/layouts/fairhw.png"
